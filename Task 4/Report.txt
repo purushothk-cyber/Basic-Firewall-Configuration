@@ -1,0 +1,47 @@
+CYBER SECURITY INTERNSHIP – TASK 4-3  
+Title: Basic Firewall Configuration using UFW on Linux (Kali)
+
+Objective:
+To configure and test basic firewall rules using UFW on Linux for allowing and denying network traffic based on port numbers.
+
+OS Used:
+Kali Linux (Debian-based)
+
+Steps Performed:
+
+1. Enabled UFW:
+   sudo ufw enable
+
+2. Verified Firewall Status:
+   sudo ufw status verbose
+   Output:
+   - Status: active
+   - Default: deny (incoming), allow (outgoing)
+
+3. Allowed SSH port (22):
+   sudo ufw allow 22
+
+4. Denied Telnet port (23):
+   sudo ufw deny 23
+
+5. Tested Port 23 using Telnet:
+   telnet localhost 23
+   Output: Connection refused (expected, because port 23 is blocked)
+
+6. Removed test rule to restore state:
+   sudo ufw delete deny 23
+
+Screenshot:
+See 'Screenshot of UFW(1).png' in the repository.
+
+Key Concepts Practiced:
+- Firewall traffic control (Inbound rule blocking)
+- UFW command usage
+- Port-based rule testing (Telnet for port 23)
+- Secure access rule (allowing SSH)
+
+Notes:
+- Telnet is blocked for security reasons (unencrypted).
+- UFW is a user-friendly interface for managing iptables.
+
+Task Completed Successfully
